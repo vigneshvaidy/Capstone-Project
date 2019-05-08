@@ -1,0 +1,2326 @@
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Using configurations: 'baseline_L2'
+Experiment id: baseline_L2-20190301-142656
+Building network ...
+  number of parameters: 2097608
+  layer output shapes:
+    InputLayer                       (None, 700, 42)
+    ReshapeLayer                     (44800, 42)
+    DenseLayer                       (44800, 200)
+    ReshapeLayer                     (64, 700, 200)
+    LSTMLayer                        (64, 700, 400)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 800)
+    ReshapeLayer                     (44800, 800)
+    DropoutLayer                     (44800, 800)
+    DenseLayer                       (44800, 200)
+    DenseLayer                       (44800, 8)
+    ReshapeLayer                     (64, 700, 8)
+Creating cost function
+Reshape{3}.0
+Creating eval function
+('probs_flat: ', Reshape{2}.0)
+Computing updates ...
+[Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0]
+Elemwise{sqrt,no_inplace}.0
+config.batch_size 64
+data.num_classes 8
+has build model
+Compiling train ...
+Compiling eval ...
+Training Data is Available ...
+Loading train data ...
+('labels: ', array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 6, ..., 0, 0, 0],
+       [0, 2, 2, ..., 0, 0, 0],
+       ...,
+       [0, 2, 2, ..., 0, 0, 0],
+       [0, 5, 5, ..., 0, 0, 0],
+       [0, 2, 2, ..., 0, 0, 0]], dtype=int32))
+Loading splits ...
+y shape
+(256, 700)
+x_test shape
+(256, 700, 42)
+Epoch 1 of 2
+  setting learning rate to 0.0010000
+/home/xelese/.local/lib/python2.7/site-packages/theano/tensor/subtensor.py:2339: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  out[0][inputs[2:]] = inputs[1]
+  average training loss: 3.37522
+  average training accuracy: 0.45055
+  average norm: 1.31847
+  validating: valid loss
+Average evaluation loss (valid): 3.36500
+Average evaluation accuracy (valid): 0.52928
+  00:02:43 since start (163.74 s)
+  estimated 00:05:27 to go (ETA: Fri Mar  1 14:35:30 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_baseline_L2-20190301-142656
+  average training loss: 3.05022
+  average training accuracy: 0.57181
+  average norm: 0.98581
+  validating: valid loss
+Average evaluation loss (valid): 3.04735
+Average evaluation accuracy (valid): 0.58476
+  00:05:25 since start (161.27 s)
+  estimated 00:10:50 to go (ETA: Fri Mar  1 14:43:34 2019)
+
+
+
+-------------------------------------------------------------------------------------
+
+
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Using configurations: 'baseline_L2_CNN_vertical'
+Experiment id: baseline_L2_CNN_vertical-20190301-155841
+Building network ...
+  number of parameters: 2757336
+  layer output shapes:
+    InputLayer                       (None, 700, 42)
+    DimshuffleLayer                  (None, 42, 700)
+    Conv1DLayer                      (None, 16, 700)
+    Conv1DLayer                      (None, 16, 700)
+    Conv1DLayer                      (None, 16, 700)
+    ConcatLayer                      (None, 48, 700)
+    DimshuffleLayer                  (None, 700, 48)
+    ConcatLayer                      (None, 700, 90)
+    ReshapeLayer                     (44800, 90)
+    DenseLayer                       (44800, 200)
+    ReshapeLayer                     (64, 700, 200)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 600)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 800)
+    ReshapeLayer                     (44800, 800)
+    DropoutLayer                     (44800, 800)
+    DenseLayer                       (44800, 200)
+    DenseLayer                       (44800, 8)
+    ReshapeLayer                     (64, 700, 8)
+Creating cost function
+Reshape{3}.0
+Creating eval function
+('probs_flat: ', Reshape{2}.0)
+Computing updates ...
+[Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0]
+Elemwise{sqrt,no_inplace}.0
+config.batch_size 64
+data.num_classes 8
+has build model
+Compiling train ...
+Compiling eval ...
+Training Data is Available ...
+Loading train data ...
+('labels: ', array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 6, ..., 0, 0, 0],
+       [0, 2, 2, ..., 0, 0, 0],
+       ...,
+       [0, 2, 2, ..., 0, 0, 0],
+       [0, 5, 5, ..., 0, 0, 0],
+       [0, 2, 2, ..., 0, 0, 0]], dtype=int32))
+Loading splits ...
+y shape
+(256, 700)
+x_test shape
+(256, 700, 42)
+Epoch 1 of 2
+  setting learning rate to 0.0050000
+/home/xelese/.local/lib/python2.7/site-packages/theano/tensor/subtensor.py:2339: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  out[0][inputs[2:]] = inputs[1]
+  average training loss: 4.66249
+  average training accuracy: 0.33053
+  average norm: 5.11457
+  validating: valid loss
+Average evaluation loss (valid): 4.66775
+Average evaluation accuracy (valid): 0.33811
+  00:02:56 since start (176.87 s)
+  estimated 00:05:53 to go (ETA: Fri Mar  1 16:08:23 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_baseline_L2_CNN_vertical-20190301-155841
+  average training loss: 3.48894
+  average training accuracy: 0.50583
+  average norm: 1.14552
+  validating: valid loss
+Average evaluation loss (valid): 3.47087
+Average evaluation accuracy (valid): 0.60076
+  00:05:50 since start (174.03 s)
+  estimated 00:11:41 to go (ETA: Fri Mar  1 16:17:05 2019)
+
+
+
+---------------------------------------------------------------------------------------
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Using configurations: 'baseline_L2_CNN_vertical'
+Experiment id: baseline_L2_CNN_vertical-20190301-200629
+Building network ...
+  number of parameters: 2757880
+  layer output shapes:
+    InputLayer                       (None, 700, 42)
+    DimshuffleLayer                  (None, 42, 700)
+    Conv1DLayer                      (None, 16, 700)
+    BatchNormLayer                   (None, 16, 700)
+    NonlinearityLayer                (None, 16, 700)
+    Conv1DLayer                      (None, 16, 700)
+    BatchNormLayer                   (None, 16, 700)
+    NonlinearityLayer                (None, 16, 700)
+    Conv1DLayer                      (None, 16, 700)
+    BatchNormLayer                   (None, 16, 700)
+    NonlinearityLayer                (None, 16, 700)
+    ConcatLayer                      (None, 48, 700)
+    DimshuffleLayer                  (None, 700, 48)
+    ConcatLayer                      (None, 700, 90)
+    ReshapeLayer                     (44800, 90)
+    DenseLayer                       (44800, 200)
+    BatchNormLayer                   (44800, 200)
+    NonlinearityLayer                (44800, 200)
+    ReshapeLayer                     (64, 700, 200)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 600)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 800)
+    ReshapeLayer                     (44800, 800)
+    DropoutLayer                     (44800, 800)
+    DenseLayer                       (44800, 200)
+    DenseLayer                       (44800, 8)
+    ReshapeLayer                     (64, 700, 8)
+Creating cost function
+Reshape{3}.0
+Creating eval function
+('probs_flat: ', Reshape{2}.0)
+Computing updates ...
+[Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0]
+Elemwise{sqrt,no_inplace}.0
+config.batch_size 64
+data.num_classes 8
+has build model
+Compiling train ...
+Compiling eval ...
+Training Data is Available ...
+Loading train data ...
+('labels: ', array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 6, ..., 0, 0, 0],
+       [0, 2, 2, ..., 0, 0, 0],
+       ...,
+       [0, 2, 2, ..., 0, 0, 0],
+       [0, 5, 5, ..., 0, 0, 0],
+       [0, 2, 2, ..., 0, 0, 0]], dtype=int32))
+Loading splits ...
+y shape
+(256, 700)
+x_test shape
+(256, 700, 42)
+Epoch 1 of 2
+  setting learning rate to 0.0050000
+/home/xelese/.local/lib/python2.7/site-packages/theano/tensor/subtensor.py:2339: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  out[0][inputs[2:]] = inputs[1]
+  average training loss: nan
+  average training accuracy: 0.19110
+  average norm: nan
+  validating: valid loss
+Average evaluation loss (valid): nan
+Average evaluation accuracy (valid): 0.19238
+  00:03:02 since start (182.96 s)
+  estimated 00:06:05 to go (ETA: Fri Mar  1 20:16:14 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_baseline_L2_CNN_vertical-20190301-200629
+  average training loss: nan
+  average training accuracy: 0.19182
+  average norm: nan
+  validating: valid loss
+Average evaluation loss (valid): nan
+Average evaluation accuracy (valid): 0.19238
+  00:06:02 since start (179.89 s)
+  estimated 00:12:05 to go (ETA: Fri Mar  1 20:25:14 2019)
+
+---------------------------------------------------------------------------------------------
+
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Using configurations: 'baseline_L2_CNN_vertical'
+Experiment id: baseline_L2_CNN_vertical-20190301-205328
+Building network ...
+  number of parameters: 2758680
+  layer output shapes:
+    InputLayer                       (None, 700, 42)
+    DimshuffleLayer                  (None, 42, 700)
+    Conv1DLayer                      (None, 16, 700)
+    BatchNormLayer                   (None, 16, 700)
+    NonlinearityLayer                (None, 16, 700)
+    Conv1DLayer                      (None, 16, 700)
+    BatchNormLayer                   (None, 16, 700)
+    NonlinearityLayer                (None, 16, 700)
+    Conv1DLayer                      (None, 16, 700)
+    BatchNormLayer                   (None, 16, 700)
+    NonlinearityLayer                (None, 16, 700)
+    ConcatLayer                      (None, 48, 700)
+    DimshuffleLayer                  (None, 700, 48)
+    ConcatLayer                      (None, 700, 90)
+    ReshapeLayer                     (44800, 90)
+    DenseLayer                       (44800, 200)
+    BatchNormLayer                   (44800, 200)
+    NonlinearityLayer                (44800, 200)
+    ReshapeLayer                     (64, 700, 200)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 600)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 800)
+    ReshapeLayer                     (44800, 800)
+    DropoutLayer                     (44800, 800)
+    DenseLayer                       (44800, 200)
+    BatchNormLayer                   (44800, 200)
+    NonlinearityLayer                (44800, 200)
+    DenseLayer                       (44800, 8)
+    ReshapeLayer                     (64, 700, 8)
+Creating cost function
+Reshape{3}.0
+Creating eval function
+('probs_flat: ', Reshape{2}.0)
+Computing updates ...
+[Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0, Elemwise{mul,no_inplace}.0]
+Elemwise{sqrt,no_inplace}.0
+config.batch_size 64
+data.num_classes 8
+has build model
+Compiling train ...
+Compiling eval ...
+Training Data is Available ...
+Loading train data ...
+('labels: ', array([[0, 0, 0, ..., 0, 0, 0],
+       [0, 0, 6, ..., 0, 0, 0],
+       [0, 2, 2, ..., 0, 0, 0],
+       ...,
+       [0, 2, 2, ..., 0, 0, 0],
+       [0, 5, 5, ..., 0, 0, 0],
+       [0, 2, 2, ..., 0, 0, 0]], dtype=int32))
+Loading splits ...
+y shape
+(256, 700)
+x_test shape
+(256, 700, 42)
+Epoch 1 of 2
+  setting learning rate to 0.0050000
+/home/xelese/.local/lib/python2.7/site-packages/theano/tensor/subtensor.py:2339: FutureWarning: Using a non-tuple sequence for multidimensional indexing is deprecated; use `arr[tuple(seq)]` instead of `arr[seq]`. In the future this will be interpreted as an array index, `arr[np.array(seq)]`, which will result either in an error or a different result.
+  out[0][inputs[2:]] = inputs[1]
+  average training loss: nan
+  average training accuracy: 0.19124
+  average norm: nan
+  validating: valid loss
+Average evaluation loss (valid): nan
+Average evaluation accuracy (valid): 0.19238
+  00:03:07 since start (187.76 s)
+  estimated 00:06:15 to go (ETA: Fri Mar  1 21:03:29 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_baseline_L2_CNN_vertical-20190301-205328
+  average training loss: nan
+  average training accuracy: 0.19182
+  average norm: nan
+  validating: valid loss
+Average evaluation loss (valid): nan
+Average evaluation accuracy (valid): 0.19238
+  00:06:12 since start (184.84 s)
+  estimated 00:12:25 to go (ETA: Fri Mar  1 21:12:43 2019)
+
+----------------------------------------------------------------------------------------------------
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Using configurations: 'baseline_L2_CNN_vertical'
+Experiment id: baseline_L2_CNN_vertical-20190303-155350
+Building network ...
+  number of parameters: 2097208
+  layer output shapes:
+    InputLayer                       (None, 700, 42)
+    ReshapeLayer                     (44800, 42)
+    DenseLayer                       (44800, 200)
+    ReshapeLayer                     (64, 700, 200)
+    LSTMLayer                        (64, 700, 400)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 800)
+    ReshapeLayer                     (44800, 800)
+    DropoutLayer                     (44800, 800)
+    DenseLayer                       (44800, 200)
+    DenseLayer                       (44800, 8)
+    ReshapeLayer                     (64, 700, 8)
+Creating cost function
+Creating eval function
+Computing updates ...
+config.batch_size 64
+data.num_classes 8
+has build model
+Compiling train ...
+Compiling eval ...
+Training Data is Available ...
+Loading train data ...
+Loading splits ...
+y shape
+(256, 700)
+x_test shape
+(256, 700, 42)
+Epoch 1 of 1
+  setting learning rate to 0.0010000
+  out[0][inputs[2:]] = inputs[1]
+  average training loss: nan
+  average training accuracy: 0.19080
+  average norm: nan
+  validating: valid loss
+Average evaluation loss (valid): nan
+Average evaluation accuracy (valid): 0.19238
+  00:02:43 since start (163.19 s)
+  estimated 00:02:43 to go (ETA: Sun Mar  3 15:59:38 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_baseline_L2_CNN_vertical-20190303-155350
+
+
+
+
+(base) xelese@xeleseUbuntuOS:~/CapstoneProject$ python Prediction.py /home/xelese/CapstoneProject/metadata/dump_baseline_L2_CNN_vertical-20190303-155350-0.pkl
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+shape of metadata_path_all
+1
+Loading test data ...
+Loading metadata file /home/xelese/CapstoneProject/metadata/dump_baseline_L2_CNN_vertical-20190303-155350-0.pkl
+Using configurations: 'baseline_L2_CNN_vertical'
+Build model
+Build eval function
+Load parameters
+Compile functions
+Predict
+Storing predictions in predictions/predictions_baseline_L2_CNN_vertical-20190303-155350-0.npy
+
+
+
+
+(base) xelese@xeleseUbuntuOS:~/CapstoneProject$ python Argument_Evaluation.py /home/xelese/CapstoneProject/predictions/predictions_baseline_L2_CNN_vertical-20190303-155350-0.npy
+shape of metadata_path_all
+1
+/home/xelese/CapstoneProject/predictions/predictions_baseline_L2_CNN_vertical-20190303-155350-0.npy
+shape of predictions
+(640, 700, 8)
+nan
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.21141
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Using configurations: 'bl'
+Experiment id: bl-20190303-193758
+Building network ...
+  number of parameters: 2097608
+  layer output shapes:
+    InputLayer                       (None, 700, 42)
+    ReshapeLayer                     (44800, 42)
+    DenseLayer                       (44800, 200)
+    ReshapeLayer                     (64, 700, 200)
+    LSTMLayer                        (64, 700, 400)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 800)
+    ReshapeLayer                     (44800, 800)
+    DropoutLayer                     (44800, 800)
+    DenseLayer                       (44800, 200)
+    DenseLayer                       (44800, 8)
+    ReshapeLayer                     (64, 700, 8)
+Creating cost function
+Creating eval function
+Computing updates ...
+config.batch_size 64
+data.num_classes 8
+has build model
+Compiling train ...
+Compiling eval ...
+Training Data is Available ...
+Loading train data ...
+Loading splits ...
+y shape
+(256, 700)
+x_test shape
+(256, 700, 42)
+  setting learning rate to 0.0010000
+  average training loss: 3.37522
+  average training accuracy: 0.45055
+  average norm: 1.31847
+  validating: valid loss
+Average evaluation loss (valid): 3.36500
+Average evaluation accuracy (valid): 0.52928
+  00:02:44 since start (164.38 s)
+  estimated 00:02:44 to go (ETA: Sun Mar  3 19:43:49 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_bl-20190303-193758
+
+  setting learning rate to 0.0010000
+  average training loss: 4.08608
+  average training accuracy: 0.41392
+  average norm: 1.06522
+  validating: valid loss
+Average evaluation loss (valid): 4.07201
+Average evaluation accuracy (valid): 0.53530
+  00:02:57 since start (177.32 s)
+  estimated 00:02:57 to go (ETA: Sun Mar  3 16:41:59 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_baseline_L2-20190303-163542
+
+
+
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+shape of metadata_path_all
+1
+Loading test data ...
+Loading metadata file /home/xelese/CapstoneProject/metadata/dump_bl-20190303-193758-0.pkl
+Using configurations: 'bl'
+Build model
+Build eval function
+Load parameters
+Compile functions
+Predict
+Storing predictions in predictions/predictions_bl-20190303-193758-0.npy
+
+
+
+
+shape of metadata_path_all
+1
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190303-193758-0.npy
+shape of predictions
+(640, 700, 8)
+0.9959241
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.50334
+
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Using configurations: 'baseline_L2'
+Experiment id: baseline_L2-20190303-163542
+Building network ...
+  number of parameters: 2737608
+  layer output shapes:
+    InputLayer                       (None, 700, 42)
+    ReshapeLayer                     (44800, 42)
+    DenseLayer                       (44800, 200)
+    ReshapeLayer                     (64, 700, 200)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 600)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 800)
+    ReshapeLayer                     (44800, 800)
+    DropoutLayer                     (44800, 800)
+    DenseLayer                       (44800, 200)
+    DenseLayer                       (44800, 8)
+    ReshapeLayer                     (64, 700, 8)
+Creating cost function
+Creating eval function
+Computing updates ...
+config.batch_size 64
+data.num_classes 8
+has build model
+Compiling train ...
+Compiling eval ...
+Training Data is Available ...
+Loading train data ...
+Loading splits ...
+y shape
+(256, 700)
+x_test shape
+(256, 700, 42)
+
+
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+shape of metadata_path_all
+1
+Loading test data ...
+Loading metadata file /home/xelese/CapstoneProject/metadata/dump_bl-20190303-191514-0.pkl
+Using configurations: 'bl'
+Build model
+Build eval function
+Load parameters
+Compile functions
+Predict
+Storing predictions in predictions/predictions_bl-20190303-191514-0.npy
+
+
+
+
+shape of metadata_path_all
+1
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190303-191514-0.npy
+shape of predictions
+(640, 700, 8)
+0.9952436
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.58253
+--------------------------------------------------------------------------------------------------------------------
+
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Using configurations: 'bl'
+Experiment id: bl-20190304-143921
+Building network ...
+  number of parameters: 2757480
+  layer output shapes:
+    InputLayer                       (None, 700, 42)
+    DimshuffleLayer                  (None, 42, 700)
+    Conv1DLayer                      (None, 16, 700)
+    BatchNormLayer                   (None, 16, 700)
+    NonlinearityLayer                (None, 16, 700)
+    Conv1DLayer                      (None, 16, 700)
+    BatchNormLayer                   (None, 16, 700)
+    NonlinearityLayer                (None, 16, 700)
+    Conv1DLayer                      (None, 16, 700)
+    BatchNormLayer                   (None, 16, 700)
+    NonlinearityLayer                (None, 16, 700)
+    ConcatLayer                      (None, 48, 700)
+    DimshuffleLayer                  (None, 700, 48)
+    ConcatLayer                      (None, 700, 90)
+    ReshapeLayer                     (44800, 90)
+    DenseLayer                       (44800, 200)
+    ReshapeLayer                     (64, 700, 200)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 600)
+    LSTMLayer                        (64, 700, 400)
+    ConcatLayer                      (64, 700, 800)
+    ReshapeLayer                     (44800, 800)
+    DropoutLayer                     (44800, 800)
+    DenseLayer                       (44800, 200)
+    DenseLayer                       (44800, 8)
+    ReshapeLayer                     (64, 700, 8)
+Creating cost function
+Creating eval function
+Computing updates ...
+config.batch_size 64
+data.num_classes 8
+has build model
+Compiling train ...
+Compiling eval ...
+Training Data is Available ...
+Loading train data ...
+Loading splits ...
+y shape
+(256, 700)
+x_test shape
+(256, 700, 42)
+Epoch 1 of 21
+  setting learning rate to 0.0050000
+  average training loss: 4.52070
+  average training accuracy: 0.37044
+  average norm: 2.41915
+  validating: valid loss
+Average evaluation loss (valid): 4.47166
+Average evaluation accuracy (valid): 0.59432
+  00:03:01 since start (181.26 s)
+  estimated 01:03:26 to go (ETA: Mon Mar  4 15:46:18 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_bl-20190304-143921
+  average training loss: 3.31661
+  average training accuracy: 0.58651
+  average norm: 0.88835
+  validating: valid loss
+Average evaluation loss (valid): 3.30052
+Average evaluation accuracy (valid): 0.65065
+  00:05:58 since start (177.42 s)
+  estimated 02:05:32 to go (ETA: Mon Mar  4 16:51:21 2019)
+
+  average training loss: 2.86649
+  average training accuracy: 0.63159
+  average norm: 0.65911
+  validating: valid loss
+Average evaluation loss (valid): 2.85714
+Average evaluation accuracy (valid): 0.65184
+  00:09:05 since start (187.28 s)
+  estimated 03:11:05 to go (ETA: Mon Mar  4 18:00:01 2019)
+
+  average training loss: 2.54648
+  average training accuracy: 0.64845
+  average norm: 0.57395
+  validating: valid loss
+Average evaluation loss (valid): 2.53807
+Average evaluation accuracy (valid): 0.66515
+  00:12:10 since start (184.55 s)
+  estimated 04:15:40 to go (ETA: Mon Mar  4 19:07:41 2019)
+
+  average training loss: 2.29640
+  average training accuracy: 0.65620
+  average norm: 0.54365
+  validating: valid loss
+Average evaluation loss (valid): 2.28848
+Average evaluation accuracy (valid): 0.68032
+  00:15:08 since start (177.70 s)
+  estimated 05:17:52 to go (ETA: Mon Mar  4 20:12:50 2019)
+
+  average training loss: 2.06738
+  average training accuracy: 0.66722
+  average norm: 0.47115
+  validating: valid loss
+Average evaluation loss (valid): 2.07163
+Average evaluation accuracy (valid): 0.58302
+  00:18:06 since start (178.03 s)
+  estimated 06:20:10 to go (ETA: Mon Mar  4 21:18:07 2019)
+
+  average training loss: 1.88440
+  average training accuracy: 0.67332
+  average norm: 0.44632
+  validating: valid loss
+Average evaluation loss (valid): 1.87958
+Average evaluation accuracy (valid): 0.68200
+  00:21:09 since start (182.98 s)
+  estimated 07:24:13 to go (ETA: Mon Mar  4 22:25:12 2019)
+
+  average training loss: 1.72734
+  average training accuracy: 0.67862
+  average norm: 0.41650
+  validating: valid loss
+Average evaluation loss (valid): 1.72300
+Average evaluation accuracy (valid): 0.68877
+  00:24:11 since start (182.65 s)
+  estimated 08:28:08 to go (ETA: Mon Mar  4 23:32:11 2019)
+
+  average training loss: 1.62894
+  average training accuracy: 0.67339
+  average norm: 0.57171
+  validating: valid loss
+Average evaluation loss (valid): 1.62682
+Average evaluation accuracy (valid): 0.66589
+  00:27:13 since start (181.83 s)
+  estimated 09:31:47 to go (ETA: Tue Mar  5 00:38:51 2019)
+
+  average training loss: 1.50454
+  average training accuracy: 0.68144
+  average norm: 0.37733
+  validating: valid loss
+Average evaluation loss (valid): 1.50036
+Average evaluation accuracy (valid): 0.69670
+  00:30:12 since start (178.53 s)
+  estimated 10:34:16 to go (ETA: Tue Mar  5 01:44:19 2019)
+
+Epoch 11 of 21
+  average training loss: 1.40821
+  average training accuracy: 0.68462
+  average norm: 0.37137
+  validating: valid loss
+Average evaluation loss (valid): 1.40467
+Average evaluation accuracy (valid): 0.69259
+  00:33:14 since start (182.21 s)
+  estimated 11:38:03 to go (ETA: Tue Mar  5 02:51:07 2019)
+
+  average training loss: 1.33250
+  average training accuracy: 0.68579
+  average norm: 0.36890
+  validating: valid loss
+Average evaluation loss (valid): 1.33049
+Average evaluation accuracy (valid): 0.68632
+  00:36:17 since start (183.07 s)
+  estimated 12:42:07 to go (ETA: Tue Mar  5 03:58:15 2019)
+
+  average training loss: 1.26924
+  average training accuracy: 0.68628
+  average norm: 0.38531
+  validating: valid loss
+Average evaluation loss (valid): 1.26645
+Average evaluation accuracy (valid): 0.69616
+  00:39:21 since start (184.39 s)
+  estimated 13:46:39 to go (ETA: Tue Mar  5 05:05:51 2019)
+
+  average training loss: 1.20446
+  average training accuracy: 0.69092
+  average norm: 0.35926
+  validating: valid loss
+Average evaluation loss (valid): 1.20244
+Average evaluation accuracy (valid): 0.69450
+  00:42:24 since start (182.55 s)
+  estimated 14:50:33 to go (ETA: Tue Mar  5 06:12:47 2019)
+
+  average training loss: 1.15593
+  average training accuracy: 0.69241
+  average norm: 0.33586
+  validating: valid loss
+Average evaluation loss (valid): 1.15357
+Average evaluation accuracy (valid): 0.70121
+  00:45:26 since start (181.98 s)
+  estimated 15:54:14 to go (ETA: Tue Mar  5 07:19:31 2019)
+
+  average training loss: 1.12006
+  average training accuracy: 0.69140
+  average norm: 0.37113
+  validating: valid loss
+Average evaluation loss (valid): 1.11873
+Average evaluation accuracy (valid): 0.69225
+  00:48:26 since start (180.37 s)
+  estimated 16:57:22 to go (ETA: Tue Mar  5 08:25:39 2019)
+
+  average training loss: 1.08521
+  average training accuracy: 0.69285
+  average norm: 0.35681
+  validating: valid loss
+Average evaluation loss (valid): 1.08306
+Average evaluation accuracy (valid): 0.70441
+  00:51:25 since start (178.82 s)
+  estimated 17:59:57 to go (ETA: Tue Mar  5 09:31:13 2019)
+
+  average training loss: 1.06258
+  average training accuracy: 0.69244
+  average norm: 0.38214
+  validating: valid loss
+Average evaluation loss (valid): 1.06243
+Average evaluation accuracy (valid): 0.68602
+  00:54:24 since start (178.73 s)
+  estimated 19:02:30 to go (ETA: Tue Mar  5 10:36:45 2019)
+
+  average training loss: 1.02173
+  average training accuracy: 0.69744
+  average norm: 0.31779
+  validating: valid loss
+Average evaluation loss (valid): 1.02186
+Average evaluation accuracy (valid): 0.69869
+  00:57:26 since start (182.59 s)
+  estimated 20:06:25 to go (ETA: Tue Mar  5 11:43:42 2019)
+
+  average training loss: 1.00418
+  average training accuracy: 0.69720
+  average norm: 0.33250
+  validating: valid loss
+Average evaluation loss (valid): 1.00321
+Average evaluation accuracy (valid): 0.69730
+  01:00:29 since start (182.72 s)
+  estimated 21:10:22 to go (ETA: Tue Mar  5 12:50:42 2019)
+
+Epoch 21 of 21
+  average training loss: 0.98697
+  average training accuracy: 0.69750
+  average norm: 0.33531
+  validating: valid loss
+Average evaluation loss (valid): 0.98520
+Average evaluation accuracy (valid): 0.70643
+  01:03:27 since start (178.14 s)
+  estimated 22:12:43 to go (ETA: Tue Mar  5 13:56:01 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_bl-20190304-143921
+
+
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+shape of metadata_path_all
+1
+Loading test data ...
+Loading metadata file /home/xelese/CapstoneProject/metadata/dump_bl-20190304-143921-20.pkl
+Using configurations: 'bl'
+Build model
+Build eval function
+Load parameters
+Compile functions
+Predict
+Storing predictions in predictions/predictions_bl-20190304-143921-20.npy
+
+
+
+
+
+
+
+shape of metadata_path_all
+1
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190304-143921-20.npy
+shape of predictions
+(640, 700, 8)
+0.9998623
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67071
+
+
+-----------------------------------------------------------------------------------------
+
+
+  average training loss: 0.84338
+  average training accuracy: 0.72253
+  average norm: 0.31613
+  validating: valid loss
+Average evaluation loss (valid): 0.84436
+Average evaluation accuracy (valid): 0.71795
+  04:31:14 since start (176.50 s)
+  estimated 908:41:14 to go (ETA: Thu Apr 11 18:05:18 2019)
+
+  average training loss: 0.84575
+  average training accuracy: 0.72222
+  average norm: 0.32192
+  validating: valid loss
+Average evaluation loss (valid): 0.84592
+Average evaluation accuracy (valid): 0.72228
+  04:34:11 since start (176.47 s)
+  estimated 918:32:25 to go (ETA: Fri Apr 12 03:59:25 2019)
+
+  average training loss: 0.85211
+  average training accuracy: 0.72081
+  average norm: 0.33031
+  validating: valid loss
+Average evaluation loss (valid): 0.85381
+Average evaluation accuracy (valid): 0.70529
+  04:37:07 since start (176.08 s)
+  estimated 928:22:17 to go (ETA: Fri Apr 12 13:52:13 2019)
+
+  average training loss: 0.84748
+  average training accuracy: 0.72121
+  average norm: 0.32474
+  validating: valid loss
+Average evaluation loss (valid): 0.84763
+Average evaluation accuracy (valid): 0.72276
+  04:40:03 since start (175.94 s)
+  estimated 938:11:41 to go (ETA: Fri Apr 12 23:44:34 2019)
+
+  average training loss: 0.85336
+  average training accuracy: 0.72057
+  average norm: 0.33223
+  validating: valid loss
+Average evaluation loss (valid): 0.85483
+Average evaluation accuracy (valid): 0.70875
+  04:42:59 since start (175.86 s)
+  estimated 948:00:50 to go (ETA: Sat Apr 13 09:36:38 2019)
+
+  average training loss: 0.83779
+  average training accuracy: 0.72525
+  average norm: 0.29948
+  validating: valid loss
+Average evaluation loss (valid): 0.83973
+Average evaluation accuracy (valid): 0.70520
+  04:45:55 since start (176.05 s)
+  estimated 957:50:36 to go (ETA: Sat Apr 13 19:29:20 2019)
+
+  average training loss: 0.84117
+  average training accuracy: 0.72390
+  average norm: 0.31651
+  validating: valid loss
+Average evaluation loss (valid): 0.84279
+Average evaluation accuracy (valid): 0.71515
+  04:48:51 since start (176.41 s)
+  estimated 967:41:34 to go (ETA: Sun Apr 14 05:23:15 2019)
+
+  average training loss: 0.84115
+  average training accuracy: 0.72388
+  average norm: 0.32386
+  validating: valid loss
+Average evaluation loss (valid): 0.84898
+Average evaluation accuracy (valid): 0.62912
+  04:51:48 since start (176.29 s)
+  estimated 977:32:10 to go (ETA: Sun Apr 14 15:16:47 2019)
+
+  average training loss: 0.84872
+  average training accuracy: 0.72162
+  average norm: 0.33459
+  validating: valid loss
+Average evaluation loss (valid): 0.84869
+Average evaluation accuracy (valid): 0.72282
+  04:54:44 since start (176.51 s)
+  estimated 987:23:28 to go (ETA: Mon Apr 15 01:11:01 2019)
+
+Epoch 101 of 201
+  average training loss: 0.84203
+  average training accuracy: 0.72349
+  average norm: 0.31399
+  validating: valid loss
+Average evaluation loss (valid): 0.84295
+Average evaluation accuracy (valid): 0.71781
+  04:57:41 since start (176.52 s)
+  estimated 997:14:48 to go (ETA: Mon Apr 15 11:05:19 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_bl-20190304-165219
+  average training loss: 0.84301
+  average training accuracy: 0.72354
+  average norm: 0.31755
+  validating: valid loss
+Average evaluation loss (valid): 0.84308
+Average evaluation accuracy (valid): 0.72561
+  05:00:37 since start (176.48 s)
+  estimated 1007:06:00 to go (ETA: Mon Apr 15 20:59:27 2019)
+
+  average training loss: 0.83623
+  average training accuracy: 0.72647
+  average norm: 0.29607
+  validating: valid loss
+Average evaluation loss (valid): 0.83731
+Average evaluation accuracy (valid): 0.71543
+  05:03:34 since start (176.42 s)
+  estimated 1016:57:00 to go (ETA: Tue Apr 16 06:53:23 2019)
+
+  average training loss: 0.84063
+  average training accuracy: 0.72448
+  average norm: 0.32624
+  validating: valid loss
+Average evaluation loss (valid): 0.84217
+Average evaluation accuracy (valid): 0.71296
+  05:06:30 since start (176.43 s)
+  estimated 1026:48:03 to go (ETA: Tue Apr 16 16:47:22 2019)
+
+  average training loss: 0.85581
+  average training accuracy: 0.71999
+  average norm: 0.35448
+  validating: valid loss
+Average evaluation loss (valid): 0.85716
+Average evaluation accuracy (valid): 0.71122
+  05:09:26 since start (176.34 s)
+  estimated 1036:38:47 to go (ETA: Wed Apr 17 02:41:03 2019)
+
+  average training loss: 0.83750
+  average training accuracy: 0.72638
+  average norm: 0.30593
+  validating: valid loss
+Average evaluation loss (valid): 0.83779
+Average evaluation accuracy (valid): 0.72656
+  05:12:23 since start (176.49 s)
+  estimated 1046:30:02 to go (ETA: Wed Apr 17 12:35:14 2019)
+
+  average training loss: 0.84249
+  average training accuracy: 0.72457
+  average norm: 0.31941
+  validating: valid loss
+Average evaluation loss (valid): 0.84306
+Average evaluation accuracy (valid): 0.72104
+  05:15:19 since start (176.38 s)
+  estimated 1056:20:54 to go (ETA: Wed Apr 17 22:29:02 2019)
+
+  average training loss: 0.87687
+  average training accuracy: 0.71416
+  average norm: 0.40969
+  validating: valid loss
+Average evaluation loss (valid): 0.87609
+Average evaluation accuracy (valid): 0.72136
+  05:18:16 since start (176.35 s)
+  estimated 1066:11:40 to go (ETA: Thu Apr 18 08:22:45 2019)
+
+  average training loss: 0.84288
+  average training accuracy: 0.72527
+  average norm: 0.31933
+  validating: valid loss
+Average evaluation loss (valid): 0.84303
+Average evaluation accuracy (valid): 0.72634
+  05:21:12 since start (176.03 s)
+  estimated 1076:01:22 to go (ETA: Thu Apr 18 18:15:23 2019)
+
+  average training loss: 0.84257
+  average training accuracy: 0.72555
+  average norm: 0.30690
+  validating: valid loss
+Average evaluation loss (valid): 0.84252
+Average evaluation accuracy (valid): 0.72785
+  05:24:07 since start (175.88 s)
+  estimated 1085:50:34 to go (ETA: Fri Apr 19 04:07:31 2019)
+
+Epoch 111 of 201
+  average training loss: 0.83946
+  average training accuracy: 0.72586
+  average norm: 0.30756
+  validating: valid loss
+Average evaluation loss (valid): 0.84020
+Average evaluation accuracy (valid): 0.72332
+  05:27:03 since start (175.84 s)
+  estimated 1095:39:37 to go (ETA: Fri Apr 19 13:59:30 2019)
+
+  average training loss: 0.83253
+  average training accuracy: 0.72830
+  average norm: 0.29681
+  validating: valid loss
+Average evaluation loss (valid): 0.83415
+Average evaluation accuracy (valid): 0.72143
+  05:29:59 since start (175.87 s)
+  estimated 1105:28:48 to go (ETA: Fri Apr 19 23:51:37 2019)
+
+  average training loss: 0.83861
+  average training accuracy: 0.72602
+  average norm: 0.32817
+  validating: valid loss
+Average evaluation loss (valid): 0.83895
+Average evaluation accuracy (valid): 0.72411
+  05:32:58 since start (178.63 s)
+  estimated 1115:27:12 to go (ETA: Sat Apr 20 09:52:59 2019)
+
+  average training loss: 0.83398
+  average training accuracy: 0.72792
+  average norm: 0.30530
+  validating: valid loss
+Average evaluation loss (valid): 0.83502
+Average evaluation accuracy (valid): 0.72026
+  05:35:54 since start (176.28 s)
+  estimated 1125:17:43 to go (ETA: Sat Apr 20 19:46:27 2019)
+
+  average training loss: 0.83517
+  average training accuracy: 0.72800
+  average norm: 0.30463
+  validating: valid loss
+Average evaluation loss (valid): 0.83779
+Average evaluation accuracy (valid): 0.71083
+  05:38:50 since start (176.17 s)
+  estimated 1135:07:53 to go (ETA: Sun Apr 21 05:39:33 2019)
+
+  average training loss: 0.83719
+  average training accuracy: 0.72688
+  average norm: 0.32453
+  validating: valid loss
+Average evaluation loss (valid): 0.83765
+Average evaluation accuracy (valid): 0.72607
+  05:41:46 since start (176.16 s)
+  estimated 1144:58:02 to go (ETA: Sun Apr 21 15:32:37 2019)
+
+  average training loss: 0.82944
+  average training accuracy: 0.72911
+  average norm: 0.30112
+  validating: valid loss
+Average evaluation loss (valid): 0.83294
+Average evaluation accuracy (valid): 0.70832
+  05:44:43 since start (176.27 s)
+  estimated 1154:48:32 to go (ETA: Mon Apr 22 01:26:04 2019)
+
+  average training loss: 0.83773
+  average training accuracy: 0.72712
+  average norm: 0.32065
+  validating: valid loss
+Average evaluation loss (valid): 0.83793
+Average evaluation accuracy (valid): 0.72789
+  05:47:40 since start (177.30 s)
+  estimated 1164:42:28 to go (ETA: Mon Apr 22 11:22:57 2019)
+
+  average training loss: 0.84519
+  average training accuracy: 0.72480
+  average norm: 0.33884
+  validating: valid loss
+Average evaluation loss (valid): 0.84602
+Average evaluation accuracy (valid): 0.72237
+  05:50:36 since start (176.46 s)
+  estimated 1174:33:36 to go (ETA: Mon Apr 22 21:17:02 2019)
+
+  average training loss: 0.82871
+  average training accuracy: 0.72957
+  average norm: 0.29397
+  validating: valid loss
+Average evaluation loss (valid): 0.82942
+Average evaluation accuracy (valid): 0.72763
+  05:53:32 since start (175.99 s)
+  estimated 1184:23:10 to go (ETA: Tue Apr 23 07:09:32 2019)
+
+Epoch 121 of 201
+  average training loss: 0.84578
+  average training accuracy: 0.72440
+  average norm: 0.34586
+  validating: valid loss
+Average evaluation loss (valid): 0.84556
+Average evaluation accuracy (valid): 0.72920
+  05:56:28 since start (175.63 s)
+  estimated 1194:11:31 to go (ETA: Tue Apr 23 17:00:49 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_bl-20190304-165219
+  average training loss: 0.82667
+  average training accuracy: 0.73074
+  average norm: 0.28975
+  validating: valid loss
+Average evaluation loss (valid): 0.82939
+Average evaluation accuracy (valid): 0.71485
+  05:59:24 since start (175.93 s)
+  estimated 1204:00:52 to go (ETA: Wed Apr 24 02:53:06 2019)
+
+  average training loss: 0.84634
+  average training accuracy: 0.72474
+  average norm: 0.36596
+  validating: valid loss
+Average evaluation loss (valid): 0.84948
+Average evaluation accuracy (valid): 0.70353
+  06:02:20 since start (175.93 s)
+  estimated 1213:50:15 to go (ETA: Wed Apr 24 12:45:24 2019)
+
+  average training loss: 0.83570
+  average training accuracy: 0.72879
+  average norm: 0.29553
+  validating: valid loss
+Average evaluation loss (valid): 0.83795
+Average evaluation accuracy (valid): 0.71107
+  06:05:16 since start (175.83 s)
+  estimated 1223:39:16 to go (ETA: Wed Apr 24 22:37:22 2019)
+
+  average training loss: 0.83222
+  average training accuracy: 0.73004
+  average norm: 0.30746
+  validating: valid loss
+Average evaluation loss (valid): 0.83318
+Average evaluation accuracy (valid): 0.72347
+  06:08:12 since start (175.87 s)
+  estimated 1233:28:26 to go (ETA: Thu Apr 25 08:29:27 2019)
+
+  average training loss: 0.83601
+  average training accuracy: 0.72828
+  average norm: 0.32710
+  validating: valid loss
+Average evaluation loss (valid): 0.83639
+Average evaluation accuracy (valid): 0.72914
+  06:11:08 since start (176.39 s)
+  estimated 1243:19:20 to go (ETA: Thu Apr 25 18:23:18 2019)
+
+  average training loss: 0.83263
+  average training accuracy: 0.72955
+  average norm: 0.30636
+  validating: valid loss
+Average evaluation loss (valid): 0.83364
+Average evaluation accuracy (valid): 0.72287
+  06:14:04 since start (176.43 s)
+  estimated 1253:10:23 to go (ETA: Fri Apr 26 04:17:17 2019)
+
+  average training loss: 0.82811
+  average training accuracy: 0.73071
+  average norm: 0.30732
+  validating: valid loss
+Average evaluation loss (valid): 0.83146
+Average evaluation accuracy (valid): 0.70755
+  06:17:01 since start (176.42 s)
+  estimated 1263:01:24 to go (ETA: Fri Apr 26 14:11:15 2019)
+
+  average training loss: 0.84638
+  average training accuracy: 0.72542
+  average norm: 0.34903
+  validating: valid loss
+Average evaluation loss (valid): 0.84632
+Average evaluation accuracy (valid): 0.72993
+  06:19:57 since start (176.49 s)
+  estimated 1272:52:39 to go (ETA: Sat Apr 27 00:05:25 2019)
+
+  average training loss: 0.82980
+  average training accuracy: 0.73101
+  average norm: 0.31076
+  validating: valid loss
+Average evaluation loss (valid): 0.83074
+Average evaluation accuracy (valid): 0.72596
+  06:22:54 since start (176.54 s)
+  estimated 1282:44:03 to go (ETA: Sat Apr 27 09:59:46 2019)
+
+Epoch 131 of 201
+  average training loss: 0.82994
+  average training accuracy: 0.73048
+  average norm: 0.30587
+  validating: valid loss
+Average evaluation loss (valid): 0.83116
+Average evaluation accuracy (valid): 0.72534
+  06:25:50 since start (176.48 s)
+  estimated 1292:35:14 to go (ETA: Sat Apr 27 19:53:54 2019)
+
+  average training loss: 0.83979
+  average training accuracy: 0.72769
+  average norm: 0.34296
+  validating: valid loss
+Average evaluation loss (valid): 0.84178
+Average evaluation accuracy (valid): 0.71732
+  06:28:47 since start (176.46 s)
+  estimated 1302:26:23 to go (ETA: Sun Apr 28 05:47:59 2019)
+
+  average training loss: 0.83655
+  average training accuracy: 0.72884
+  average norm: 0.32287
+  validating: valid loss
+Average evaluation loss (valid): 0.83743
+Average evaluation accuracy (valid): 0.72585
+  06:31:43 since start (175.84 s)
+  estimated 1312:15:27 to go (ETA: Sun Apr 28 15:39:59 2019)
+
+  average training loss: 0.83299
+  average training accuracy: 0.73006
+  average norm: 0.32046
+  validating: valid loss
+Average evaluation loss (valid): 0.83456
+Average evaluation accuracy (valid): 0.72452
+  06:34:38 since start (175.86 s)
+  estimated 1322:04:34 to go (ETA: Mon Apr 29 01:32:02 2019)
+
+  average training loss: 0.83398
+  average training accuracy: 0.73036
+  average norm: 0.33208
+  validating: valid loss
+Average evaluation loss (valid): 0.83838
+Average evaluation accuracy (valid): 0.69408
+  06:37:34 since start (175.83 s)
+  estimated 1331:53:35 to go (ETA: Mon Apr 29 11:23:59 2019)
+
+  average training loss: 0.82744
+  average training accuracy: 0.73188
+  average norm: 0.30392
+  validating: valid loss
+Average evaluation loss (valid): 0.82926
+Average evaluation accuracy (valid): 0.72042
+  06:40:31 since start (176.39 s)
+  estimated 1341:44:31 to go (ETA: Mon Apr 29 21:17:51 2019)
+
+  average training loss: 0.83192
+  average training accuracy: 0.73046
+  average norm: 0.31982
+  validating: valid loss
+Average evaluation loss (valid): 0.83273
+Average evaluation accuracy (valid): 0.72800
+  06:43:27 since start (176.34 s)
+  estimated 1351:35:15 to go (ETA: Tue Apr 30 07:11:32 2019)
+
+  average training loss: 0.83303
+  average training accuracy: 0.73017
+  average norm: 0.32917
+  validating: valid loss
+Average evaluation loss (valid): 0.83597
+Average evaluation accuracy (valid): 0.71045
+  06:46:24 since start (176.57 s)
+  estimated 1361:26:45 to go (ETA: Tue Apr 30 17:05:58 2019)
+
+  average training loss: 0.82228
+  average training accuracy: 0.73362
+  average norm: 0.29571
+  validating: valid loss
+Average evaluation loss (valid): 0.82510
+Average evaluation accuracy (valid): 0.71700
+  06:49:20 since start (176.49 s)
+  estimated 1371:17:59 to go (ETA: Wed May  1 03:00:09 2019)
+
+  average training loss: 0.84190
+  average training accuracy: 0.72800
+  average norm: 0.35506
+  validating: valid loss
+Average evaluation loss (valid): 0.84290
+Average evaluation accuracy (valid): 0.72615
+  06:52:17 since start (176.62 s)
+  estimated 1381:09:40 to go (ETA: Wed May  1 12:54:46 2019)
+
+Epoch 141 of 201
+  average training loss: 0.83546
+  average training accuracy: 0.73054
+  average norm: 0.32366
+  validating: valid loss
+Average evaluation loss (valid): 0.83675
+Average evaluation accuracy (valid): 0.72276
+  06:55:13 since start (175.99 s)
+  estimated 1390:59:14 to go (ETA: Wed May  1 22:47:16 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_bl-20190304-165219
+  average training loss: 0.84960
+  average training accuracy: 0.72629
+  average norm: 0.36618
+  validating: valid loss
+Average evaluation loss (valid): 0.84993
+Average evaluation accuracy (valid): 0.72731
+  06:58:09 since start (175.88 s)
+  estimated 1400:48:26 to go (ETA: Thu May  2 08:39:24 2019)
+
+  average training loss: 0.82648
+  average training accuracy: 0.73358
+  average norm: 0.29491
+  validating: valid loss
+Average evaluation loss (valid): 0.82776
+Average evaluation accuracy (valid): 0.72991
+  07:01:04 since start (175.60 s)
+  estimated 1410:36:41 to go (ETA: Thu May  2 18:30:35 2019)
+
+  average training loss: 0.82450
+  average training accuracy: 0.73359
+  average norm: 0.31637
+  validating: valid loss
+Average evaluation loss (valid): 0.83043
+Average evaluation accuracy (valid): 0.70634
+  07:04:00 since start (175.91 s)
+  estimated 1420:25:59 to go (ETA: Fri May  3 04:22:48 2019)
+
+  average training loss: 0.83208
+  average training accuracy: 0.73197
+  average norm: 0.33500
+  validating: valid loss
+Average evaluation loss (valid): 0.83300
+Average evaluation accuracy (valid): 0.72965
+  07:06:56 since start (175.87 s)
+  estimated 1430:15:09 to go (ETA: Fri May  3 14:14:54 2019)
+
+  average training loss: 0.83573
+  average training accuracy: 0.73131
+  average norm: 0.32800
+  validating: valid loss
+Average evaluation loss (valid): 0.83616
+Average evaluation accuracy (valid): 0.73245
+  07:09:52 since start (175.88 s)
+  estimated 1440:04:20 to go (ETA: Sat May  4 00:07:02 2019)
+
+  average training loss: 0.82733
+  average training accuracy: 0.73372
+  average norm: 0.31927
+  validating: valid loss
+Average evaluation loss (valid): 0.82845
+Average evaluation accuracy (valid): 0.72935
+  07:12:48 since start (175.85 s)
+  estimated 1449:53:27 to go (ETA: Sat May  4 09:59:04 2019)
+
+  average training loss: 0.82562
+  average training accuracy: 0.73383
+  average norm: 0.31129
+  validating: valid loss
+Average evaluation loss (valid): 0.82806
+Average evaluation accuracy (valid): 0.71801
+  07:15:44 since start (175.87 s)
+  estimated 1459:42:36 to go (ETA: Sat May  4 19:51:09 2019)
+
+  average training loss: 0.83941
+  average training accuracy: 0.73054
+  average norm: 0.37301
+  validating: valid loss
+Average evaluation loss (valid): 0.84118
+Average evaluation accuracy (valid): 0.72347
+  07:18:39 since start (175.91 s)
+  estimated 1469:31:54 to go (ETA: Sun May  5 05:43:23 2019)
+
+  average training loss: 0.83496
+  average training accuracy: 0.73165
+  average norm: 0.33182
+  validating: valid loss
+Average evaluation loss (valid): 0.83625
+Average evaluation accuracy (valid): 0.72258
+  07:21:36 since start (176.42 s)
+  estimated 1479:22:54 to go (ETA: Sun May  5 15:37:19 2019)
+
+Epoch 151 of 201
+  average training loss: 0.83171
+  average training accuracy: 0.73231
+  average norm: 0.32989
+  validating: valid loss
+Average evaluation loss (valid): 0.83304
+Average evaluation accuracy (valid): 0.72798
+  07:24:32 since start (176.49 s)
+  estimated 1489:14:09 to go (ETA: Mon May  6 01:31:31 2019)
+
+  average training loss: 0.82817
+  average training accuracy: 0.73390
+  average norm: 0.32655
+  validating: valid loss
+Average evaluation loss (valid): 0.82930
+Average evaluation accuracy (valid): 0.73047
+  07:27:29 since start (176.46 s)
+  estimated 1499:05:17 to go (ETA: Mon May  6 11:25:35 2019)
+
+  average training loss: 0.84014
+  average training accuracy: 0.73083
+  average norm: 0.38124
+  validating: valid loss
+Average evaluation loss (valid): 0.84131
+Average evaluation accuracy (valid): 0.72652
+  07:30:25 since start (176.42 s)
+  estimated 1508:56:17 to go (ETA: Mon May  6 21:19:32 2019)
+
+  average training loss: 0.83007
+  average training accuracy: 0.73382
+  average norm: 0.31402
+  validating: valid loss
+Average evaluation loss (valid): 0.83138
+Average evaluation accuracy (valid): 0.72881
+  07:33:22 since start (176.46 s)
+  estimated 1518:47:25 to go (ETA: Tue May  7 07:13:37 2019)
+
+  average training loss: 0.83088
+  average training accuracy: 0.73355
+  average norm: 0.32734
+  validating: valid loss
+Average evaluation loss (valid): 0.83229
+Average evaluation accuracy (valid): 0.72968
+  07:36:18 since start (176.60 s)
+  estimated 1528:39:03 to go (ETA: Tue May  7 17:08:10 2019)
+
+  average training loss: 0.82650
+  average training accuracy: 0.73491
+  average norm: 0.32777
+  validating: valid loss
+Average evaluation loss (valid): 0.82791
+Average evaluation accuracy (valid): 0.73028
+  07:39:15 since start (176.48 s)
+  estimated 1538:30:15 to go (ETA: Wed May  8 03:02:19 2019)
+
+  average training loss: 0.82531
+  average training accuracy: 0.73515
+  average norm: 0.31391
+  validating: valid loss
+Average evaluation loss (valid): 0.82836
+Average evaluation accuracy (valid): 0.71565
+  07:42:11 since start (176.34 s)
+  estimated 1548:20:59 to go (ETA: Wed May  8 12:55:59 2019)
+
+  average training loss: 0.82747
+  average training accuracy: 0.73461
+  average norm: 0.33286
+  validating: valid loss
+Average evaluation loss (valid): 0.82951
+Average evaluation accuracy (valid): 0.72435
+  07:45:07 since start (175.95 s)
+  estimated 1558:10:24 to go (ETA: Wed May  8 22:48:21 2019)
+
+  average training loss: 0.82647
+  average training accuracy: 0.73533
+  average norm: 0.32625
+  validating: valid loss
+Average evaluation loss (valid): 0.82818
+Average evaluation accuracy (valid): 0.72486
+  07:48:03 since start (175.79 s)
+  estimated 1567:59:19 to go (ETA: Thu May  9 08:40:11 2019)
+
+  average training loss: 0.85435
+  average training accuracy: 0.72685
+  average norm: 0.40797
+  validating: valid loss
+Average evaluation loss (valid): 0.85605
+Average evaluation accuracy (valid): 0.71930
+  07:50:59 since start (175.92 s)
+  estimated 1577:48:39 to go (ETA: Thu May  9 18:32:27 2019)
+
+Epoch 161 of 201
+  average training loss: 0.82859
+  average training accuracy: 0.73513
+  average norm: 0.31450
+  validating: valid loss
+Average evaluation loss (valid): 0.83272
+Average evaluation accuracy (valid): 0.70020
+  07:53:55 since start (175.93 s)
+  estimated 1587:38:01 to go (ETA: Fri May 10 04:24:45 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_bl-20190304-165219
+  average training loss: 0.83162
+  average training accuracy: 0.73440
+  average norm: 0.33301
+  validating: valid loss
+Average evaluation loss (valid): 0.83293
+Average evaluation accuracy (valid): 0.72871
+  07:56:51 since start (176.62 s)
+  estimated 1597:29:41 to go (ETA: Fri May 10 14:19:21 2019)
+
+  average training loss: 0.82826
+  average training accuracy: 0.73536
+  average norm: 0.32145
+  validating: valid loss
+Average evaluation loss (valid): 0.83402
+Average evaluation accuracy (valid): 0.70114
+  07:59:48 since start (176.45 s)
+  estimated 1607:20:47 to go (ETA: Sat May 11 00:13:24 2019)
+
+  average training loss: 0.82926
+  average training accuracy: 0.73464
+  average norm: 0.33410
+  validating: valid loss
+Average evaluation loss (valid): 0.83080
+Average evaluation accuracy (valid): 0.72808
+  08:02:44 since start (176.22 s)
+  estimated 1617:11:07 to go (ETA: Sat May 11 10:06:40 2019)
+
+  average training loss: 0.82423
+  average training accuracy: 0.73590
+  average norm: 0.31780
+  validating: valid loss
+Average evaluation loss (valid): 0.82606
+Average evaluation accuracy (valid): 0.72652
+  08:05:40 since start (176.39 s)
+  estimated 1627:02:00 to go (ETA: Sat May 11 20:00:30 2019)
+
+  average training loss: 0.84112
+  average training accuracy: 0.73130
+  average norm: 0.36577
+  validating: valid loss
+Average evaluation loss (valid): 0.84316
+Average evaluation accuracy (valid): 0.71412
+  08:08:37 since start (176.47 s)
+  estimated 1636:53:12 to go (ETA: Sun May 12 05:54:38 2019)
+
+  average training loss: 0.88124
+  average training accuracy: 0.72365
+  average norm: 0.48402
+  validating: valid loss
+Average evaluation loss (valid): 0.88237
+Average evaluation accuracy (valid): 0.71683
+  08:11:33 since start (176.48 s)
+  estimated 1646:44:24 to go (ETA: Sun May 12 15:48:47 2019)
+
+  average training loss: 0.85628
+  average training accuracy: 0.72920
+  average norm: 0.35532
+  validating: valid loss
+Average evaluation loss (valid): 0.85752
+Average evaluation accuracy (valid): 0.72200
+  08:14:30 since start (176.53 s)
+  estimated 1656:35:46 to go (ETA: Mon May 13 01:43:06 2019)
+
+  average training loss: 0.83082
+  average training accuracy: 0.73614
+  average norm: 0.31482
+  validating: valid loss
+Average evaluation loss (valid): 0.83242
+Average evaluation accuracy (valid): 0.73073
+  08:17:26 since start (175.81 s)
+  estimated 1666:24:45 to go (ETA: Mon May 13 11:35:00 2019)
+
+  average training loss: 0.82173
+  average training accuracy: 0.73883
+  average norm: 0.30896
+  validating: valid loss
+Average evaluation loss (valid): 0.82662
+Average evaluation accuracy (valid): 0.70806
+  08:20:22 since start (175.89 s)
+  estimated 1676:13:58 to go (ETA: Mon May 13 21:27:09 2019)
+
+Epoch 171 of 201
+  average training loss: 0.83981
+  average training accuracy: 0.73306
+  average norm: 0.34596
+  validating: valid loss
+Average evaluation loss (valid): 0.84464
+Average evaluation accuracy (valid): 0.69723
+  08:23:18 since start (175.93 s)
+  estimated 1686:03:20 to go (ETA: Tue May 14 07:19:27 2019)
+
+  average training loss: 0.84096
+  average training accuracy: 0.73282
+  average norm: 0.35085
+  validating: valid loss
+Average evaluation loss (valid): 0.84223
+Average evaluation accuracy (valid): 0.72624
+  08:26:13 since start (175.91 s)
+  estimated 1695:52:39 to go (ETA: Tue May 14 17:11:42 2019)
+
+  average training loss: 0.82530
+  average training accuracy: 0.73720
+  average norm: 0.32469
+  validating: valid loss
+Average evaluation loss (valid): 0.82737
+Average evaluation accuracy (valid): 0.72600
+  08:29:09 since start (176.02 s)
+  estimated 1705:42:19 to go (ETA: Wed May 15 03:04:18 2019)
+
+  average training loss: 0.82491
+  average training accuracy: 0.73714
+  average norm: 0.31904
+  validating: valid loss
+Average evaluation loss (valid): 0.83041
+Average evaluation accuracy (valid): 0.70480
+  08:32:06 since start (176.64 s)
+  estimated 1715:34:04 to go (ETA: Wed May 15 12:59:00 2019)
+
+  average training loss: 0.82561
+  average training accuracy: 0.73725
+  average norm: 0.33207
+  validating: valid loss
+Average evaluation loss (valid): 0.82831
+Average evaluation accuracy (valid): 0.72344
+  08:35:02 since start (176.39 s)
+  estimated 1725:24:58 to go (ETA: Wed May 15 22:52:50 2019)
+
+  average training loss: 0.82847
+  average training accuracy: 0.73605
+  average norm: 0.33789
+  validating: valid loss
+Average evaluation loss (valid): 0.82998
+Average evaluation accuracy (valid): 0.72905
+  08:37:58 since start (175.80 s)
+  estimated 1735:13:54 to go (ETA: Thu May 16 08:44:42 2019)
+
+  average training loss: 0.81784
+  average training accuracy: 0.73963
+  average norm: 0.30659
+  validating: valid loss
+Average evaluation loss (valid): 0.82042
+Average evaluation accuracy (valid): 0.72439
+  08:40:54 since start (175.83 s)
+  estimated 1745:02:56 to go (ETA: Thu May 16 18:36:40 2019)
+
+  average training loss: 0.82233
+  average training accuracy: 0.73807
+  average norm: 0.33592
+  validating: valid loss
+Average evaluation loss (valid): 0.82451
+Average evaluation accuracy (valid): 0.72491
+  08:43:50 since start (175.92 s)
+  estimated 1754:52:16 to go (ETA: Fri May 17 04:28:55 2019)
+
+  average training loss: 0.83989
+  average training accuracy: 0.73271
+  average norm: 0.35866
+  validating: valid loss
+Average evaluation loss (valid): 0.84451
+Average evaluation accuracy (valid): 0.70982
+  08:46:46 since start (175.89 s)
+  estimated 1764:41:31 to go (ETA: Fri May 17 14:21:06 2019)
+
+  average training loss: 0.82436
+  average training accuracy: 0.73784
+  average norm: 0.32728
+  validating: valid loss
+Average evaluation loss (valid): 0.82596
+Average evaluation accuracy (valid): 0.73090
+  08:49:42 since start (175.82 s)
+  estimated 1774:30:31 to go (ETA: Sat May 18 00:13:02 2019)
+
+Epoch 181 of 201
+  average training loss: 0.82389
+  average training accuracy: 0.73786
+  average norm: 0.33950
+  validating: valid loss
+Average evaluation loss (valid): 0.82744
+Average evaluation accuracy (valid): 0.71552
+  08:52:38 since start (175.88 s)
+  estimated 1784:19:42 to go (ETA: Sat May 18 10:05:09 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_bl-20190304-165219
+  average training loss: 0.84185
+  average training accuracy: 0.73383
+  average norm: 0.36617
+  validating: valid loss
+Average evaluation loss (valid): 0.84316
+Average evaluation accuracy (valid): 0.72725
+  08:55:33 since start (175.84 s)
+  estimated 1794:08:45 to go (ETA: Sat May 18 19:57:08 2019)
+
+  average training loss: 0.82648
+  average training accuracy: 0.73774
+  average norm: 0.31897
+  validating: valid loss
+Average evaluation loss (valid): 0.82933
+Average evaluation accuracy (valid): 0.72132
+  08:58:29 since start (175.84 s)
+  estimated 1803:57:49 to go (ETA: Sun May 19 05:49:08 2019)
+
+  average training loss: 0.82242
+  average training accuracy: 0.73900
+  average norm: 0.32796
+  validating: valid loss
+Average evaluation loss (valid): 0.82494
+Average evaluation accuracy (valid): 0.72686
+  09:01:25 since start (175.91 s)
+  estimated 1813:47:07 to go (ETA: Sun May 19 15:41:22 2019)
+
+  average training loss: 0.82468
+  average training accuracy: 0.73809
+  average norm: 0.34082
+  validating: valid loss
+Average evaluation loss (valid): 0.82719
+Average evaluation accuracy (valid): 0.72480
+  09:04:21 since start (175.85 s)
+  estimated 1823:36:12 to go (ETA: Mon May 20 01:33:23 2019)
+
+  average training loss: 0.82039
+  average training accuracy: 0.73973
+  average norm: 0.33527
+  validating: valid loss
+Average evaluation loss (valid): 0.83567
+Average evaluation accuracy (valid): 0.61686
+  09:07:17 since start (175.96 s)
+  estimated 1833:25:40 to go (ETA: Mon May 20 11:25:47 2019)
+
+  average training loss: 0.83041
+  average training accuracy: 0.73719
+  average norm: 0.34047
+  validating: valid loss
+Average evaluation loss (valid): 0.83190
+Average evaluation accuracy (valid): 0.73028
+  09:10:14 since start (176.62 s)
+  estimated 1843:17:20 to go (ETA: Mon May 20 21:20:23 2019)
+
+  average training loss: 0.81935
+  average training accuracy: 0.74059
+  average norm: 0.32430
+  validating: valid loss
+Average evaluation loss (valid): 0.82249
+Average evaluation accuracy (valid): 0.72209
+  09:13:10 since start (176.65 s)
+  estimated 1853:09:06 to go (ETA: Tue May 21 07:15:06 2019)
+
+  average training loss: 0.82214
+  average training accuracy: 0.73991
+  average norm: 0.33870
+  validating: valid loss
+Average evaluation loss (valid): 0.82590
+Average evaluation accuracy (valid): 0.71371
+  09:16:07 since start (176.57 s)
+  estimated 1863:00:37 to go (ETA: Tue May 21 17:09:33 2019)
+
+  average training loss: 0.82356
+  average training accuracy: 0.73920
+  average norm: 0.34844
+  validating: valid loss
+Average evaluation loss (valid): 0.82589
+Average evaluation accuracy (valid): 0.72781
+  09:19:03 since start (176.59 s)
+  estimated 1872:52:12 to go (ETA: Wed May 22 03:04:05 2019)
+
+Epoch 191 of 201
+  average training loss: 0.81309
+  average training accuracy: 0.74205
+  average norm: 0.31468
+  validating: valid loss
+Average evaluation loss (valid): 0.81599
+Average evaluation accuracy (valid): 0.72875
+  09:22:00 since start (176.29 s)
+  estimated 1882:42:46 to go (ETA: Wed May 22 12:57:36 2019)
+
+  average training loss: 0.82010
+  average training accuracy: 0.74036
+  average norm: 0.34353
+  validating: valid loss
+Average evaluation loss (valid): 0.82378
+Average evaluation accuracy (valid): 0.72018
+  09:24:56 since start (175.94 s)
+  estimated 1892:32:10 to go (ETA: Wed May 22 22:49:55 2019)
+
+  average training loss: 0.81341
+  average training accuracy: 0.74244
+  average norm: 0.31790
+  validating: valid loss
+Average evaluation loss (valid): 0.81657
+Average evaluation accuracy (valid): 0.72735
+  09:27:52 since start (176.20 s)
+  estimated 1902:22:27 to go (ETA: Thu May 23 08:43:08 2019)
+
+  average training loss: 0.82431
+  average training accuracy: 0.73885
+  average norm: 0.35832
+  validating: valid loss
+Average evaluation loss (valid): 0.83062
+Average evaluation accuracy (valid): 0.66814
+  09:30:48 since start (176.49 s)
+  estimated 1912:13:41 to go (ETA: Thu May 23 18:37:19 2019)
+
+  average training loss: 0.82135
+  average training accuracy: 0.74045
+  average norm: 0.33782
+  validating: valid loss
+Average evaluation loss (valid): 0.82401
+Average evaluation accuracy (valid): 0.72248
+  09:33:45 since start (176.46 s)
+  estimated 1922:04:51 to go (ETA: Fri May 24 04:31:25 2019)
+
+  average training loss: 0.81906
+  average training accuracy: 0.74089
+  average norm: 0.33967
+  validating: valid loss
+Average evaluation loss (valid): 0.83267
+Average evaluation accuracy (valid): 0.66690
+  09:36:41 since start (176.46 s)
+  estimated 1931:55:59 to go (ETA: Fri May 24 14:25:30 2019)
+
+  average training loss: 0.81848
+  average training accuracy: 0.74191
+  average norm: 0.33339
+  validating: valid loss
+Average evaluation loss (valid): 0.82195
+Average evaluation accuracy (valid): 0.71951
+  09:39:38 since start (176.38 s)
+  estimated 1941:46:52 to go (ETA: Sat May 25 00:19:19 2019)
+
+  average training loss: 0.83636
+  average training accuracy: 0.73551
+  average norm: 0.37611
+  validating: valid loss
+Average evaluation loss (valid): 0.83820
+Average evaluation accuracy (valid): 0.72589
+  09:42:34 since start (176.43 s)
+  estimated 1951:37:54 to go (ETA: Sat May 25 10:13:18 2019)
+
+  average training loss: 0.83875
+  average training accuracy: 0.73608
+  average norm: 0.38543
+  validating: valid loss
+Average evaluation loss (valid): 0.84080
+Average evaluation accuracy (valid): 0.72284
+  09:45:31 since start (176.46 s)
+  estimated 1961:29:03 to go (ETA: Sat May 25 20:07:23 2019)
+
+  average training loss: 0.82142
+  average training accuracy: 0.74128
+  average norm: 0.33153
+  validating: valid loss
+Average evaluation loss (valid): 0.82610
+Average evaluation accuracy (valid): 0.71167
+  09:48:27 since start (176.39 s)
+  estimated 1971:19:58 to go (ETA: Sun May 26 06:01:14 2019)
+
+Epoch 201 of 201
+  average training loss: 0.82357
+  average training accuracy: 0.74089
+  average norm: 0.35203
+  validating: valid loss
+Average evaluation loss (valid): 0.82812
+Average evaluation accuracy (valid): 0.70735
+  09:51:23 since start (176.25 s)
+  estimated 1981:10:25 to go (ETA: Sun May 26 15:54:38 2019)
+
+  saving parameters and metadata
+  stored in metadata/dump_bl-20190304-165219
+
+
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Loading metadata file /home/xelese/CapstoneProject/metadata/dump_bl-20190304-165219-120.pkl
+Using configurations: 'bl'
+Build model
+Build eval function
+Load parameters
+Compile functions
+Predict
+Storing predictions in predictions/predictions_bl-20190304-165219-120.npy
+
+
+
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.68735
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+NameError: name 'predictions' is not defined
+20 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-20.npy
+shape of predictions
+(640, 700, 8)
+0.9995425
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.66523
+40 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-40.npy
+shape of predictions
+(640, 700, 8)
+0.9998981
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.66937
+60 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-60.npy
+shape of predictions
+(640, 700, 8)
+0.99983716
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67563
+80 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-80.npy
+shape of predictions
+(640, 700, 8)
+0.9999056
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67938
+100 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-100.npy
+shape of predictions
+(640, 700, 8)
+0.99984837
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67385
+120 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-120.npy
+shape of predictions
+(640, 700, 8)
+0.9998939
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67462
+140 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-140.npy
+shape of predictions
+(640, 700, 8)
+0.9998964
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.68222
+160 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-160.npy
+shape of predictions
+(640, 700, 8)
+0.99994195
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.66939
+180 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-180.npy
+shape of predictions
+(640, 700, 8)
+0.9999511
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.68309
+200 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-200.npy
+shape of predictions
+(640, 700, 8)
+0.999863
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.66616
+220 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-220.npy
+shape of predictions
+(640, 700, 8)
+0.9998902
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.68240
+240 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-240.npy
+shape of predictions
+(640, 700, 8)
+0.99990535
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.66059
+260 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-260.npy
+shape of predictions
+(640, 700, 8)
+0.9999063
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.68109
+280 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-280.npy
+shape of predictions
+(640, 700, 8)
+0.99994004
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.68212
+300 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-300.npy
+shape of predictions
+(640, 700, 8)
+0.99994934
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67459
+320 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-320.npy
+shape of predictions
+(640, 700, 8)
+0.99995327
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67916
+340 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-340.npy
+shape of predictions
+(640, 700, 8)
+0.9998778
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.66792
+360 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-360.npy
+shape of predictions
+(640, 700, 8)
+0.9999553
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.66433
+380 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-380.npy
+shape of predictions
+(640, 700, 8)
+0.9999571
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67976
+400 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-400.npy
+shape of predictions
+(640, 700, 8)
+0.99996257
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.63711
+420 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-420.npy
+shape of predictions
+(640, 700, 8)
+0.99993956
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67458
+440 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-440.npy
+shape of predictions
+(640, 700, 8)
+0.99997354
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67518
+460 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-460.npy
+shape of predictions
+(640, 700, 8)
+0.99996984
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67153
+480 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-480.npy
+shape of predictions
+(640, 700, 8)
+0.99996233
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.69213
+500 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-500.npy
+shape of predictions
+(640, 700, 8)
+0.9999738
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.66536
+520 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-520.npy
+shape of predictions
+(640, 700, 8)
+0.9999846
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.67438
+540 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-540.npy
+shape of predictions
+(640, 700, 8)
+0.9999049
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.58486
+560 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-560.npy
+shape of predictions
+(640, 700, 8)
+0.9999764
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.70408
+580 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-580.npy
+shape of predictions
+(640, 700, 8)
+0.9999696
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.70337
+600 epoch
+/home/xelese/CapstoneProject/predictions/predictions_bl-20190325-141754-600.npy
+shape of predictions
+(640, 700, 8)
+0.99998736
+/home/xelese/.local/lib/python2.7/site-packages/theano/gpuarray/dnn.py:184: UserWarning: Your cuDNN version is more recent than Theano. If you encounter problems, try updating Theano or downgrading cuDNN to a version >= v5 and <= v7.
+  warnings.warn("Your cuDNN version is more recent than "
+Using cuDNN version 7402 on context None
+Mapped name None to device cuda: GeForce GTX 860M (0000:01:00.0)
+Loading test data ...
+Accuracy (test) is: 0.66719
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+[[[9.97144163e-01 3.95080395e-04 2.43901202e-04 ... 1.35099122e-04
+   1.93784083e-03 1.31086374e-04]
+  [9.53230679e-01 3.11242137e-03 1.24992768e-03 ... 1.94068123e-02
+   1.31578436e-02 9.32988152e-03]
+  [8.61811817e-01 5.24944067e-03 1.13158522e-03 ... 6.29793629e-02
+   5.96380979e-02 8.48507136e-03]
+  ...
+  [9.63471308e-02 4.17224038e-03 1.37227224e-02 ... 7.12098718e-01
+   4.49010953e-02 1.24947518e-01]
+  [1.27905190e-01 5.46220550e-03 2.83274800e-02 ... 6.31039917e-01
+   6.32584393e-02 1.36884734e-01]
+  [2.25225776e-01 1.02328537e-02 5.75545095e-02 ... 4.69636947e-01
+   9.18676034e-02 1.28582686e-01]]
+
+ [[9.95816290e-01 1.17160717e-03 1.19859632e-03 ... 7.16869690e-05
+   8.21873546e-04 5.33910526e-04]
+  [9.25857604e-01 5.16345259e-03 6.46955073e-02 ... 3.24991066e-04
+   1.33942976e-03 1.93763385e-03]
+  [5.58920979e-01 1.77837554e-02 4.10700709e-01 ... 1.32841655e-04
+   9.73259471e-03 2.31216592e-03]
+  ...
+  [8.60693753e-02 2.62409775e-03 2.20797155e-02 ... 7.56787062e-01
+   2.19932348e-02 1.06351145e-01]
+  [6.64999858e-02 3.97068402e-03 1.44255059e-02 ... 7.58219600e-01
+   3.06368135e-02 1.22461937e-01]
+  [1.18396789e-01 8.82944278e-03 2.08083522e-02 ... 6.73411191e-01
+   5.45829535e-02 1.18822604e-01]]
+
+ [[9.98464227e-01 5.37413172e-04 3.89451918e-04 ... 9.44815292e-06
+   4.69332968e-04 1.22891681e-04]
+  [8.89733613e-01 6.98165782e-03 2.24521803e-03 ... 6.93611510e-04
+   1.46392630e-02 8.50414336e-02]
+  [2.99842775e-01 3.80232022e-03 1.42572727e-03 ... 3.66474997e-04
+   6.30872369e-01 6.31273165e-02]
+  ...
+  [8.78421813e-02 4.30281647e-03 1.63214821e-02 ... 7.17931628e-01
+   4.59856242e-02 1.22009486e-01]
+  [9.87873971e-02 4.39346209e-03 1.66976936e-02 ... 6.84240937e-01
+   5.31238019e-02 1.36479318e-01]
+  [1.69483066e-01 7.48019805e-03 3.38044651e-02 ... 5.77250421e-01
+   7.52950758e-02 1.26532570e-01]]
+
+ ...
+
+ [[8.55751216e-01 5.65412268e-03 5.24694007e-03 ... 7.61447893e-03
+   9.17791110e-03 1.10798381e-01]
+  [7.16034353e-01 1.55327432e-02 1.26325916e-02 ... 1.66476648e-02
+   1.80839021e-02 2.07713500e-01]
+  [7.32152581e-01 1.42254559e-02 2.19829604e-02 ... 9.64793935e-03
+   3.17686275e-02 1.77727848e-01]
+  ...
+  [1.52121097e-01 5.08127455e-03 3.47622707e-02 ... 6.17927432e-01
+   5.46459630e-02 1.28374651e-01]
+  [1.21564060e-01 5.32620074e-03 3.15136723e-02 ... 6.40923679e-01
+   5.50730526e-02 1.37258634e-01]
+  [1.65633649e-01 1.13559226e-02 3.40171531e-02 ... 6.13152325e-01
+   6.81528896e-02 9.79419723e-02]]
+
+ [[8.55751216e-01 5.65412268e-03 5.24694007e-03 ... 7.61447893e-03
+   9.17791110e-03 1.10798381e-01]
+  [7.16034353e-01 1.55327432e-02 1.26325916e-02 ... 1.66476648e-02
+   1.80839021e-02 2.07713500e-01]
+  [7.32152581e-01 1.42254559e-02 2.19829604e-02 ... 9.64793935e-03
+   3.17686275e-02 1.77727848e-01]
+  ...
+  [1.52121097e-01 5.08127455e-03 3.47622707e-02 ... 6.17927432e-01
+   5.46459630e-02 1.28374651e-01]
+  [1.21564060e-01 5.32620074e-03 3.15136723e-02 ... 6.40923679e-01
+   5.50730526e-02 1.37258634e-01]
+  [1.65633649e-01 1.13559226e-02 3.40171531e-02 ... 6.13152325e-01
+   6.81528896e-02 9.79419723e-02]]
+
+ [[8.55751216e-01 5.65412268e-03 5.24694007e-03 ... 7.61447893e-03
+   9.17791110e-03 1.10798381e-01]
+  [7.16034353e-01 1.55327432e-02 1.26325916e-02 ... 1.66476648e-02
+   1.80839021e-02 2.07713500e-01]
+  [7.32152581e-01 1.42254559e-02 2.19829604e-02 ... 9.64793935e-03
+   3.17686275e-02 1.77727848e-01]
+  ...
+  [1.52121097e-01 5.08127455e-03 3.47622707e-02 ... 6.17927432e-01
+   5.46459630e-02 1.28374651e-01]
+  [1.21564060e-01 5.32620074e-03 3.15136723e-02 ... 6.40923679e-01
+   5.50730526e-02 1.37258634e-01]
+  [1.65633649e-01 1.13559226e-02 3.40171531e-02 ... 6.13152325e-01
+   6.81528896e-02 9.79419723e-02]]]
